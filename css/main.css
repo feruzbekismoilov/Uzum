@@ -1,17 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap);
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
-body {
-  font-family: 'Inter', sans-serif;
-}
 /* ROOT */
 :root{
     --header-top-text-color: #62656A;
-    /* --main-bg-color: #fff; */
-    /* --main-text-color: #fff; */
+    --main-bg-color: #fff;
 }
 
 html{
@@ -136,6 +129,7 @@ p{
         display: flex;
         align-items: center;
         margin-left: 18px;
+        padding: 0;
         background-color: transparent;
         border: none;
     }
@@ -217,7 +211,7 @@ p{
     }
     .header__middle__list{
         display: flex;
-        gap: 30px;
+        gap: 29px;
     }
     .header__middle__item{
         display: flex;
@@ -319,4 +313,78 @@ p{
         }
     }
     /******************************* HEADER MIDDLE STYLE END  ****************/
+
+    /******************************** HEADER BOTTOM STYLE START ***************/
+    .header__bottom__nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .list-wrapper{
+        overflow-x: auto;
+    }
+    .header__bottom__nav__list{
+        display: flex;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 20px;
+        padding: 0;
+        gap: 21px;
+    }
+    .header__bottom__nav__item{
+        position: relative;
+    }
+    .header__bottom__nav__item::after{
+        content: "";
+        position: absolute;
+        width:0;
+        height: 2px;
+        left: 0;
+        bottom: -10px;
+        background-color: #000;
+    }
+    .header__bottom__nav__item:hover::after{
+        width: 100%;
+        transition: width 0.2s linear;
+    }
+    .header__bottom__nav__link{
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #000000b3;
+        opacity: 0.87;
+    }
+    .header__bottom__nav__link:hover{
+        opacity: 1;
+    }
+    .header__bottom__nav__link:active{
+        opacity: 1;
+    }
+    .nav__list-group{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #000000b3;
+    }
+    .direction-icon{
+        margin-left: 5.55px;
+    }
+    @media screen and (max-width: 1250px) {
+        .header__bottom__nav__list{
+            width: 1200px
+        }
+        .nav__list-group{
+            margin-left: 40px;
+            padding-right: 5px;
+        }
+    }
+    /******************************** HEADER BOTTOM STYLE END ***************/
 /********************************* HEADER STYLE END *************************/
