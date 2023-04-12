@@ -151,9 +151,57 @@
     </aside>
     <!-----------------------------ASSIDE END  ---------------------------->
 
+<!------------------------------- SITE MAIN START  ---------------------------->
+    <main class="main">
+    
+    <!--  POPULAR SECTION START -->
+        <section class="popular">
+            <div class="container">
+                <h1 class="visually-hidden">Uzum</h1>
+                <div class="popular-div">
+                    <h2 class="popular__title">
+                        Hаши продукты
+                    </h2>
+                    <svg class="big-icon" width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.06543 14.2631C0.652642 13.7987 0.694477 13.0875 1.15886 12.6747L6.9629 7.51565L1.15885 2.35647C0.694476 1.94369 0.652642 1.23261 1.06543 0.768229C1.47821 0.303844 2.18929 0.262024 2.6537 0.674794L9.4037 6.67475C9.64385 6.88835 9.78125 7.19435 9.78125 7.51565C9.78125 7.83695 9.64385 8.14295 9.4037 8.3564L2.6537 14.3564C2.18929 14.7692 1.47821 14.7275 1.06543 14.2631Z" fill="black"/>
+                    </svg>
+                </div>
+                <ul class="popular__list">
+                    
+                </ul>
+                <div class="popular__wrapper">
+                </div>
+            </div>
+        </section>
+    <!-- POPULAR SECTION END -->
+    </main>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+
+    <template class="product-template">
+        <li class="popular__item">
+            <div class="popular__item__card">
+                <img class="popular__item__img" src="" alt="image">
+            </div>
+            <p class="popular__item__desc">adsvfdcklbhjggfn m</p>
+            <span class="popular__item__monthly-payment">1123</span>
+            <div class="popular__item__div">
+               <div>
+                <del class="popular__item__old-price">121234</del>
+                <p class="popular__item__new-price">1234512</p>
+               </div>
+                <span class="popular__item__div__span">
+                    <svg class="popular__item__div__span-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 10.6719V8.67188H6V13.1719C6 13.448 5.77614 13.6719 5.5 13.6719C5.22386 13.6719 5 13.448 5 13.1719V7.67188H8C8 5.26816 9.95227 3.67188 12 3.67188C14.0575 3.67188 16 5.37743 16 7.67188H19V20.1719C19 21.0003 18.3284 21.6719 17.5 21.6719H12.5C12.2239 21.6719 12 21.448 12 21.1719C12 20.8958 12.2239 20.6719 12.5 20.6719H17.5C17.7761 20.6719 18 20.448 18 20.1719V8.67188H16V10.6719H15V8.67188H9V10.6719H8ZM12 4.67188C10.4477 4.67188 9 5.8756 9 7.67188H15C15 5.96632 13.5425 4.67188 12 4.67188Z" fill="#15151A"/>
+                        <path d="M7.5 14.6719C7.77614 14.6719 8 14.8958 8 15.1719V17.6719H10.5C10.7761 17.6719 11 17.8958 11 18.1719C11 18.448 10.7761 18.6719 10.5 18.6719H8V21.1719C8 21.448 7.77614 21.6719 7.5 21.6719C7.22386 21.6719 7 21.448 7 21.1719V18.6719H4.5C4.22386 18.6719 4 18.448 4 18.1719C4 17.8958 4.22386 17.6719 4.5 17.6719H7V15.1719C7 14.8958 7.22386 14.6719 7.5 14.6719Z" fill="#15151A"/>
+                    </svg>
+                </span>
+            </div>
+         </li>
+    </template>
+<!--------------------------------- SITE MAIN END  ---------------------------->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>  
+<script src="./js/products.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

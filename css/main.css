@@ -6,7 +6,7 @@
     --header-top-text-color: #62656A;
     --main-bg-color: #fff;
 
-    --swiper-navigation-size: 40px; 
+    --swiper-navigation-size: 35px; 
 }
 
 html{
@@ -194,8 +194,9 @@ p{
         border-radius: 4px;
     }
     .header__middle__form__input{
-       width: 340px;
-       border: none;
+       width: 390px;
+       border: none; 
+       outline: none;
        font-size: 14px;
        line-height: 17px;
        color: #757575;
@@ -430,3 +431,103 @@ p{
   }
 
 /********************************* ASIDE STYLE END  ********************/
+
+
+
+/******************************************* MAIN STYLE START  *********************************/
+
+  /**************** POPULAR SECTION STYLE START  **************************/
+  .popular{
+    padding-top: 48px;
+  }
+  .popular-div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 21px;
+  }
+  .popular__title{
+    margin: 0;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .big-icon{
+    margin-left: 16.78px;
+  }
+  .popular__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .popular__item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  .popular__item:hover .popular__item__img{
+    transform: scale(1.03);
+  }
+  .popular__item__card{
+    overflow: hidden;
+  }
+  .popular__item__img{
+    margin-bottom: 12px;
+  }
+  .popular__item__desc{
+    margin: 0;
+    margin-bottom: 13px;
+    margin-left: 8px;
+    width: 212.72px;
+    font-size: 12.8px;
+    line-height: 15px;    
+  }
+  .popular__item__monthly-payment{
+    width: 40%;
+    display: inline;
+    margin: 0;
+    margin-bottom: 16px;
+    margin-left: 8px;
+    padding: 0px 4.5625px 0px 5px;
+    border-radius: 2px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+    color: #1F1F26;
+    background-color:#ffff00;
+  }
+  .popular__item__old-price{
+    display: inline;
+    margin: 0;
+    margin-left: 8px;
+    font-size: 11.2px;
+    line-height: 13px;
+    color: #757575;
+  }
+  .popular__item__div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .popular__item__div__span{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.002);
+    box-shadow: inset 0px 0px 0px 1px #D0D2D9;
+    border-radius: 16px;
+  }
+  .popular__item__div__span:hover{
+    background-color: #fafafa;
+  }
+  .popular__item__new-price{
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  /**************** POPULAR SECTION STYLE END  ****************************/
