@@ -51,6 +51,7 @@ const products = [
         "id": 7,
         "img": "./images/esty-bumag.jpg",
         "name": "Туалетная бумага Esty, 8 шт",
+        "old_sum":180000,
         "oylik_sum":32400,
         "new_sum":270000
     },

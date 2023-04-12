@@ -61,16 +61,22 @@
                 </div>
                 <ul class="header__middle__list">
                     <li class="header__middle__item">
-                        <img  class="header__middle__item-img" src="./images/icons/voyti-icon.svg" alt="icon" width="16" height="18">
-                        Войти
+                         <a class="header__middle__link" href="" >
+                            <img  class="header__middle__item-img" src="./images/icons/voyti-icon.svg" alt="icon" width="16" height="18">
+                            Войти
+                         </a>
                     </li>
                     <li class="header__middle__item">
-                        <img  class="header__middle__item-img" src="./images/icons/heart-con.svg" alt="icon" width="20" height="18">
-                        Избранное
+                        <a class="header__middle__link" href="" >
+                            <img  class="header__middle__item-img" src="./images/icons/heart-con.svg" alt="icon" width="20" height="18">
+                            Избранное
+                        </a>
                     </li>
                     <li class="header__middle__item">
-                        <img  class="header__middle__item-img" src="./images/icons/korzinka-icon.svg" alt="icon" width="16" height="20">
-                        Корзина
+                       <a class="header__middle__link" href="#">
+                           <img  class="header__middle__item-img" src="./images/icons/korzinka-icon.svg" alt="icon" width="16" height="20">
+                           Корзина
+                       </a>
                     </li>
                 </ul>
                 <button class="btn burger-menu">
@@ -177,6 +183,40 @@
     </main>
 
 
+
+    <div class="modal-products">
+        <div class="modal__card">
+            <div class="modal__card__start">
+                <button class="btn exit-btn">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.7918 12.5H5.2085" stroke="#FF002B" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.5002 19.7918L5.2085 12.5002L12.5002 5.2085" stroke="#FF002B" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <img class="modal__card__start__img" src="" alt="image" >
+            </div>
+            <div class="modal__card__end">
+                <p class="modal__card__end__desc"></p>
+                <div class="modal__card__end__div">
+                    <button class="btn minus-btn">
+                        <svg class="minus-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.91992 11H14.9199M10.9199 21C16.4199 21 20.9199 16.5 20.9199 11C20.9199 5.5 16.4199 1 10.9199 1C5.41992 1 0.919922 5.5 0.919922 11C0.919922 16.5 5.41992 21 10.9199 21Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <p class="modal__card__end__div__number">0 - ta</p>
+                    <button class="btn plus-btn">
+                        <svg class="plus-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 11H15M11 15V7M11 21C16.5 21 21 16.5 21 11C21 5.5 16.5 1 11 1C5.5 1 1 5.5 1 11C1 16.5 5.5 21 11 21Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal__card__end__bottom">
+                    <strong class="modal__card__end__price"></strong>
+                    <button class="btn add-btn">Savatga qo'shish</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <template class="product-template">
         <li class="popular__item">
