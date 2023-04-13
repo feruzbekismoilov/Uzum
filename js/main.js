@@ -123,3 +123,139 @@ elPlusBtn.addEventListener("click", function (evt) {
   count++;
   document.querySelector(".modal__card__end__div__number").textContent = `${count} - ta`
 });
+
+
+
+// -----------------------------------------------------
+
+
+const elTodoForm = document.querySelector(".js-todo-form")
+const elTodoInput = document.querySelector(".js-todo-input")
+const elTodoList = document.querySelector(".js-todo-list")
+
+const API_PATH = "http://192.168.29.180:5000/"
+const token = localStorage.getItem("loginToken")
+
+async function getTodos(){
+    try {
+        const res = await fetch(API_PATH + "todo", {
+            method: "GET",
+            headers: {
+                Authorization: token
+            }
+
+        });
+        const data = await res.json();
+        renderTodos(data)
+        console.log(data);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+async function setTodo(id){
+    if(id >= 0){
+        try {
+            const res = await fetch(API_PATH + "todo/" + id, {
+                method: "PUT", 
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: token,
+                },
+                body: JSON.stringify({
+                    text: elTodoInput.value,
+                })
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
+
+        id = "";
+    } else {
+    try {
+        const res = await fetch(API_PATH + "todo", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: token,
+            },
+            body : JSON.stringify({
+                text: elTodoInput.value,
+            })
+        })
+        const data = await res.json()
+        getTodos()
+        console.log(data);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+}
+
+
+elTodoForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+
+    setTodo()
+})
+
+async function checkTodo(id) {
+    try {
+        const res = await fetch(API_PATH + "todo/edit/" + id, {
+            method: 'PUT',
+            headers: {
+                Authorization: token
+            }
+        })
+        const data = await res.json()
+        console.log(data)
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+
+
+function renderTodos(data){
+    elTodoList.innerHTML = null;
+    data.forEach((todo) => {
+        const newLi = document.createElement('li');
+        const input = document.createElement('input');
+        const button = document.createElement('button');
+        newLi.setAttribute("class", "list-group-item")
+        newLi.classList.add("d-flex")
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("class", "form-check");
+        button.textContent = "😎"
+        input.dataset.todoId = todo.id;
+        button.dataset.editId = todo.id;
+        newLi.textContent = `${todo.id}: ${todo.todo_value}`;
+        newLi.appendChild(input);
+        newLi.appendChild(button);
+
+        input.addEventListener("input", function(evt) {
+            const todoId = evt.target.dataset.todoId;
+            checkTodo(todoId);
+            console.log(evt.target.dataset)
+            // newLi.classList.toggle("line")
+            if(todo.completed){
+                newLi.classList.add("line")
+            } else {
+                newLi.classList.remove("line")
+            }
+        })
+
+        button.addEventListener("click", function(evt){
+            const editId = evt.target.dataset.editId;
+            setTodo(editId);
+        })
+
+        elTodoList.appendChild(newLi);
+    })
+}
+
+getTodos()
+
+
+
+
