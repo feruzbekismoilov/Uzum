@@ -20,7 +20,7 @@ var swiper = new Swiper(".mySwiper", {
       CloneTemplate.querySelector(".popular__item__monthly-payment").textContent = `${product.oylik_sum}  сум/мес`;
       CloneTemplate.querySelector(".popular__item__old-price").textContent = `${product.old_sum} сум`;
       CloneTemplate.querySelector(".popular__item__new-price").textContent = `${product.new_sum} сум`;
-   
+      CloneTemplate.querySelector('.popular__item__div__span').dataset.id = product.id;
      ProductsFragment.appendChild(CloneTemplate);
    })
    
@@ -56,14 +56,21 @@ function showSearchResult (regexp){
 }
 
 // --------------------------------------------------------
+
+
 const elProductsImg = document.querySelectorAll(".popular__item__img");
 
 elProductsList.addEventListener("click", (evt) =>{
-
+  const btnId = evt.target.dataset.id;
+  console.log(evt.target.matches(".popular__item__div__span"));
   if(evt.target.matches(".popular__item__img")){
     elModalproducts.style.display = "flex";
+    const foundProduct = products.find((item) => item.id.toString() === btnId);
 
+      ProductModalInfo(foundProduct);
   }
+  
+
 });
 const elModalproducts = document.querySelector(".modal-products");
 const elExitBtn = document.querySelector(".exit-btn");  
@@ -92,14 +99,6 @@ function ProductModalInfo(product) {
 
 
 // FIND MODAL EVENTS
-  elProductsList.addEventListener("click", function (evt) {
-    const btnId = evt.target.dataset.id;
-    if (evt.target.matches(".popular__item__img")) {
-      const foundProduct = products.find((item) => item.id.toString() === btnId);
-      console.log(foundProduct);
-      ProductModalInfo(foundProduct);
-    }
-  });
 
 
 // -------------------------------------------------------
@@ -133,7 +132,7 @@ const elTodoForm = document.querySelector(".js-todo-form")
 const elTodoInput = document.querySelector(".js-todo-input")
 const elTodoList = document.querySelector(".js-todo-list")
 
-const API_PATH = "http://192.168.29.180:5000/"
+const API_PATH = "http://192.168.1.5:5000/"
 const token = localStorage.getItem("loginToken")
 
 async function getTodos(){
@@ -193,11 +192,11 @@ async function setTodo(id){
 }
 
 
-elTodoForm.addEventListener('submit', (evt) => {
-    evt.preventDefault();
+// elTodoForm.addEventListener('submit', (evt) => {
+//     evt.preventDefault();
 
-    setTodo()
-})
+//     setTodo()
+// })
 
 async function checkTodo(id) {
     try {
@@ -216,46 +215,108 @@ async function checkTodo(id) {
 
 
 
-function renderTodos(data){
-    elTodoList.innerHTML = null;
-    data.forEach((todo) => {
-        const newLi = document.createElement('li');
-        const input = document.createElement('input');
-        const button = document.createElement('button');
-        newLi.setAttribute("class", "list-group-item")
-        newLi.classList.add("d-flex")
-        input.setAttribute("type", "checkbox");
-        input.setAttribute("class", "form-check");
-        button.textContent = "😎"
-        input.dataset.todoId = todo.id;
-        button.dataset.editId = todo.id;
-        newLi.textContent = `${todo.id}: ${todo.todo_value}`;
-        newLi.appendChild(input);
-        newLi.appendChild(button);
 
-        input.addEventListener("input", function(evt) {
-            const todoId = evt.target.dataset.todoId;
-            checkTodo(todoId);
-            console.log(evt.target.dataset)
-            // newLi.classList.toggle("line")
-            if(todo.completed){
-                newLi.classList.add("line")
-            } else {
-                newLi.classList.remove("line")
-            }
-        })
+// function renderTodos(data){
+//     elTodoList.innerHTML = null;
+//     data.forEach((todo) => {
+//         // const newLi = document.createElement('li');
+//         // const input = document.createElement('input');
+//         // const button = document.createElement('button');
+//         // newLi.setAttribute("class", "list-group-item")
+//         // newLi.classList.add("d-flex")
+//         // input.setAttribute("type", "checkbox");
+//         // input.setAttribute("class", "form-check");
+//         // button.textContent = "😎"
+//         // input.dataset.todoId = todo.id;
+//         // button.dataset.editId = todo.id;
+//         // newLi.textContent = `${todo.id}: ${todo.todo_value}`;
+//         // newLi.appendChild(input);
+//         // newLi.appendChild(button);
 
-        button.addEventListener("click", function(evt){
-            const editId = evt.target.dataset.editId;
-            setTodo(editId);
-        })
+//         // input.addEventListener("input", function(evt) {
+//         //     const todoId = evt.target.dataset.todoId;
+//         //     checkTodo(todoId);
+//         //     console.log(evt.target.dataset)
+//         //     // newLi.classList.toggle("line")
+//         //     if(todo.completed){
+//         //         newLi.classList.add("line")
+//         //     } else {
+//         //         newLi.classList.remove("line")
+//         //     }
+//         // })
 
-        elTodoList.appendChild(newLi);
-    })
+//         // button.addEventListener("click", function(evt){
+//         //     const editId = evt.target.dataset.editId;
+//         //     setTodo(editId);
+//         // })
+
+//         // elTodoList.appendChild(newLi);
+//     })
+// }
+
+// getTodos()
+
+
+
+
+
+
+
+
+
+
+// if (document.readyState == 'loading'){
+//   document.addEventListener('DOMContentLoaded', ready);
+// }else{
+//   ready();
+// }
+// function ready () {
+//   let removeCardBnts = document.querySelector(".card-remove");
+//   console.log(removeCardBnts);
+//   for(let i = 0; i < removeCardBnts.length; i++) {
+//       let button = removeCardBnts[i];
+//       button.addEventListener("click", removeCardItem);
+//   }
+
+//   let addCard = document.querySelector(".popular__item__div__span");
+//   for(let i = 0; i < addCard.length; i++){
+//       let addCardBtn = addCard[i]
+//       addCardBtn.addEventListener("click", addCardClicked);
+//   }
+// }
+
+
+// function addCardClicked(evt) {
+//   let addCardBtn = evt.target
+//   let shopProducts = addCardBtn.parentElement
+//   let title = shopProducts.querySelector(".sail__desc")[0].innerHTML
+//   console.log(title);
+
+// }
+
+
+// function removeCardItem(evt){
+//     let buttonClicked = evt.target
+//     buttonClicked.parentElement.remove();
+// }
+
+
+
+let choosedProducts = [];
+if(JSON.parse(localStorage.getItem('korzinka'))===null){
+  localStorage.setItem('korzinka',JSON.stringify(choosedProducts));
+}else{
+  choosedProducts = JSON.parse(localStorage.getItem('korzinka'));
 }
 
-getTodos()
-
-
-
+const btn = document.querySelectorAll('.popular__item__div__span');
+btn.forEach((item, index) => {
+    item.addEventListener('click', (evt)=>{
+      const btnId = evt.target.dataset.id;
+      const newArr = products.filter((n)=> (n.id === products[index].id));
+      choosedProducts = [...choosedProducts,...newArr];
+      console.log(choosedProducts.length);
+      localStorage.setItem('korzinka', JSON.stringify(choosedProducts));
+    })
+});
 

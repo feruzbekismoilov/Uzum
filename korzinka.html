@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korzinka</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+    ">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+     <!----------------------------- HEADER START ----------------------->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-inner">
+                    <div class="header__top__start">
+                        <img  class="header__top__start__icon" src="./images/icons/lokatsiya-icon.svg" alt="lokatsiya icon" width="12" height="15">
+                        <p class="header__top__start__region">Город:</p>
+                        <a class="header__top__start__sity" href="#" >Ташкент</a>
+                    </div>
+                    <div class="header__top__middle">
+                        Доставим ваш заказ бесплатно — всего за 1 день!
+                    </div>
+                    <div class="header__top__end">
+                        <ul class="header__top__list">
+                            <li class="header__top__item">
+                                <a href="#" class="header__top__link">Продавайте на Uzum</a>
+                            </li>
+                            <li class="header__top__item">
+                                <a href="#" class="header__top__link">Вопрос-ответ</a>
+                            </li>
+                            <li class="header__top__item">
+                                <a href="#" class="header__top__link">Мои заказы</a>
+                            </li>
+                        </ul>
+                        <button class="btn header__top__item__btn" type="button">
+                            <img class=" btn header__top__item__btn__flag" src="./images/icons/ru-flag.svg" alt="flag icon" width="19" height="19" >
+                            <p class="header__top__item__btn__country">Русский</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header__middle">
+                <a  class="header__middle__logo" href="#" >
+                    <img class="header__middle__logo-img" src="./images/icons/logo.svg" alt="logo" width="215" height="32">
+                </a>
+                <ul class="header__middle__list">
+                    <li class="header__middle__item">
+                         <a class="header__middle__link" href="" >
+                            <img  class="header__middle__item-img" src="./images/icons/voyti-icon.svg" alt="icon" width="16" height="18">
+                            Войти
+                         </a>
+                    </li>
+                    <li class="header__middle__item">
+                        <a class="header__middle__link" href="" >
+                            <img  class="header__middle__item-img" src="./images/icons/heart-con.svg" alt="icon" width="20" height="18">
+                            Избранное
+                        </a>
+                    </li>
+                    <li class="header__middle__item">
+                       <a class="header__middle__link" href="#">
+                           <img  class="header__middle__item-img" src="./images/icons/korzinka-icon.svg" alt="icon" width="16" height="20">
+                           Корзина
+                       </a>
+                    </li>
+                </ul>
+                <button class="btn burger-menu">
+                    <img class="burger-menu__img" src="./images/burger-menu.png" alt="burger menu image" width="35" height="20">
+                </button>
+            </div>
+        </div>
+    </header>
+    <!----------------------------- HEADER END -------------------------->
+
+
+
+    <main class="main">
+        <div class="container">
+            <ul class="sail-list d-flex"></ul>
+        </div>
+    </main>
+    <template id="korzinkaCard">
+       
+            <li class="sail__item">
+                <img class="sail__img" src="./images/chistki.jpg" alt="">
+                <p class="sail__desc">vvdkhshvl.bjb;hBJ;</p>
+                <div class="sail__div">
+                    <p class="sail__price">2300</p>
+                    <form class="sail__form" action="">
+                        <input class="seil__number w-25" value="1" type="number">
+                    </form>
+                </div>
+                <button class="btn btn-danger card-remove">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                      </svg>  
+                </button>              
+            </li>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/korzinka.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+</body>
+</html>
