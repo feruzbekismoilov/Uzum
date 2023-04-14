@@ -1,5 +1,5 @@
 // this is elon musk api nasa
-const API_PATH = "http://192.168.1.5:5000/";
+const API_PATH = "https://backend-ecommerce-mr7n.onrender.com/";
 
 // get the form element
 const elRegisterForm = document.querySelector(".js-register-form");

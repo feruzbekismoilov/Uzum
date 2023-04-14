@@ -2,7 +2,7 @@ const elLoginForm = document.querySelector(".js-login-form");
 const elLoginInput = document.querySelector(".js-login-input");
 const elPasswordInput = document.querySelector(".js-password-input");
 
-const API_PATH = "http://192.168.1.5:5000/";
+const API_PATH = "https://backend-ecommerce-mr7n.onrender.com/";
 
 async function loginUser() {
     try {

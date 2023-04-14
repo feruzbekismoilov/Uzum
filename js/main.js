@@ -132,7 +132,7 @@ const elTodoForm = document.querySelector(".js-todo-form")
 const elTodoInput = document.querySelector(".js-todo-input")
 const elTodoList = document.querySelector(".js-todo-list")
 
-const API_PATH = "http://192.168.1.5:5000/"
+const API_PATH = "https://backend-ecommerce-mr7n.onrender.com/"
 const token = localStorage.getItem("loginToken")
 
 async function getTodos(){
